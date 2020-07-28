@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rick and Morty</title>
     <link rel="stylesheet" href="./static/css/style.css" />
   </head>
   <body>
-    <img src="./static/images/logo.png" width="280" alt="logo" />
-    <div class="#character-container"></div>
+    <img class="logo" src="./static/images/logo.png" width="280" alt="logo" />
+    <div class="container">
+      <div id="character"></div>
+    </div>
+    <div id="wrapper">
+      <input type="button" value="Actualizar" onclick="location.reload()" />
+    </div>
     <script type="module" src="./static/js/app.js"></script>
   </body>
 </html>
