@@ -2,7 +2,7 @@
 
 [Ver documentación](https://developer.mozilla.org/es/docs/Web/API/Fetch_API). Muestra de forma aleatoria personajes de la serie Rick and Morty usando la api de [The Rick and Morty APi](https://rickandmortyapi.com/).
 
-versión live [https://fernandochata.github.io/js_test_api_fetch/](https://fernandochata.github.io/js_test_api_fetch/)
+versión live [https://fernandochata.github.io/js_test_fetch_api/](https://fernandochata.github.io/js_test_fetch_api/)
 
 ![ScreenShoot](https://i.imgur.com/OLFkOJ8.png)
 
@@ -12,34 +12,30 @@ MIT
 
 ## Detalle
 
-solicitud GET que devuelve un archivo json
+GET que devuelve un archivo json
 ```javascript
 fetch(url) // method: 'GET'
-  .then((response) => {
-    return response.json()
-  })
-  // lo anterior se puede reducir a
-  //.then response => response.json()
-  .then((data) => {
-    ...
-    data.name
-    ...
-  })
+  .then((response) => { return response.json() }) // se puede reducir a .then response => response.json()
+  .then((data) => { ... data.name ... })
+  .catch((err) => {console.log(err)})
 ```
-
-solicitud GET que devuelve un archivo text
+GET que devuelve un archivo de texto
 ```javascript
 fetch(url) // method: 'GET'
-  .then((response) => {
-    return response.text()
+  .then((response) => { return response.text() }) // se puede reducir a .then response => response.text()
+  .then((data) => { ... console.log(data) ... }) // se puede parsear con JSON.parse(data)
+  .catch((err) => {console.log(err)})
+```
+GET que devuelve una imagen
+```javascript
+fetch(url) // method: 'GET'
+  .then((response) => { return response.blob() })
+  // se puede reducir a .then response => response.blob()
+  .then((binaryLargeObject) => {
+    const domString = URL.createObjectURL(binaryLargeObject);
+    // se puede usar domString como una imagen
   })
-  // lo anterior se puede reducir a
-  //.then response => response.text()
-  .then((data) => {
-    ...
-    // podemos parsear el archivo text a json con JSON.parse()
-    ...
-  })
+  .catch((err) => {console.log(err)})
 ```
 
 
@@ -57,6 +53,3 @@ fetch(url,{
 })
 ```
 
-```javascript
-fetch(url)
-```
