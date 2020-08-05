@@ -2,7 +2,7 @@
 
 El ejemplo muestra de forma aleatoria personajes de la serie Rick and Morty usando la api de [The Rick and Morty APi](https://rickandmortyapi.com/).
 
-Versión live [pincha acá](https://fernandochata.github.io/js_test_fetch_api/)
+Versión live [pincha acá](https://fernandochata.github.io/test_html5_js_fetch_api/)
 
 ![ScreenShoot](https://i.imgur.com/OLFkOJ8.png)
 
